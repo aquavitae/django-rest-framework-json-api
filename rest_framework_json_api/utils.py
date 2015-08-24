@@ -277,7 +277,7 @@ def extract_relationships(fields, resource):
 
             serializer = field.child
             relation_model = serializer.Meta.model
-            relation_type = format_type_name(relation_model.__name__))
+            relation_type = format_type_name(relation_model.__name__)
 
             # Get the serializer fields
             serializer_fields = get_serializer_fields(serializer)
@@ -328,7 +328,7 @@ def extract_included(fields, resource):
 
             serializer = field.child
             model = serializer.Meta.model
-            relation_type = format_type_name(model.__name__)pl
+            relation_type = format_type_name(model.__name__)
 
             # Get the serializer fields
             serializer_fields = get_serializer_fields(serializer)
