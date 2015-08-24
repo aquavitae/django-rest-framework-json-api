@@ -158,7 +158,9 @@ def get_related_resource_type(relation):
             relation_model = parent_model_relation.field.related.model
         else:
             raise APIException('Unable to find related model for relation {relation}'.format(relation=relation))
-    return inflection.pluralize(relation_model.__name__).lower()
+    # Format the type according to JSON_API_FORMAT_KEYS
+    name = list(format_keys({inflection.underscore(relation_model.__name__): None}).keys())[0]
+    return name
 
 
 def extract_id_from_url(url):
