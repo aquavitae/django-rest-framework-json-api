@@ -159,7 +159,7 @@ def get_related_resource_type(relation):
         else:
             raise APIException('Unable to find related model for relation {relation}'.format(relation=relation))
     # Format the type according to JSON_API_FORMAT_KEYS
-    name = inflection.underscore(inflection.plurallize(relation_model.__name__))
+    name = inflection.underscore(inflection.pluralize(relation_model.__name__))
     return list(format_keys({name: None}).keys())[0]
 
 
